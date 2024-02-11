@@ -3,7 +3,22 @@ guid: 47a36f356422a584cbde54d9f1a98534
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bars
+    second: {fileID: 2100000, guid: c9deb961d35b7cf41af3bed6b78c8384, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete
+    second: {fileID: 2100000, guid: b495314e708aed8448073c5392cd1a99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_lines
+    second: {fileID: 2100000, guid: 21aacbfec2034c04aa4256c477099510, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
