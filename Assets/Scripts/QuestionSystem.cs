@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Question
 {
+    public string eventName;
     public string questionText; // The text of the question
     public string redPillText; // The text for the red pill option
     public string bluePillText; // The text for the blue pill option

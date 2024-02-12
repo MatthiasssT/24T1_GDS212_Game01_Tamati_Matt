@@ -571,13 +571,14 @@ GameObject:
   - component: {fileID: 154570620}
   - component: {fileID: 154570622}
   - component: {fileID: 154570621}
+  - component: {fileID: 154570623}
   m_Layer: 5
   m_Name: QuestionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &154570620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -639,6 +640,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154570619}
   m_CullTransparentMesh: 1
+--- !u!114 &154570623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154570619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe9be62c2c90d9488b06569c5342662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionText: {fileID: 1947198612}
+  redPillButton: {fileID: 1831210656}
+  bluePillButton: {fileID: 890821120}
 --- !u!1001 &156161461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1818,7 +1834,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1835,8 +1851,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1871,7 +1887,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 8.927795, y: 8.791443, z: 12.006775, w: 10.885132}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4008,8 +4024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 479, y: -211}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 350, y: -165}
+  m_SizeDelta: {x: 510, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890821120
 MonoBehaviour:
@@ -4054,7 +4070,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 890821121}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 154570623}
+        m_TargetAssemblyTypeName: QuestionController, Assembly-CSharp
+        m_MethodName: OnBluePillSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &890821121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6821,6 +6849,7 @@ GameObject:
   - component: {fileID: 1424608429}
   - component: {fileID: 1424608431}
   - component: {fileID: 1424608430}
+  - component: {fileID: 1424608432}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6877,7 +6906,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6894,8 +6923,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6930,7 +6959,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 11.001831, y: 8.540649, z: 11.250244, w: 9.361145}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6944,6 +6973,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424608428}
   m_CullTransparentMesh: 1
+--- !u!114 &1424608432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424608428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 0
 --- !u!4 &1432494837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 491979225393936778, guid: 400d63037198b4545a903eac03db26a6,
@@ -8469,6 +8512,11 @@ PrefabInstance:
       propertyPath: popupUI
       value: 
       objectReference: {fileID: 154570619}
+    - target: {fileID: 3154126285223871940, guid: 5c2685a8d7e43fa4aa2c2c7c56d4f8b1,
+        type: 3}
+      propertyPath: eventName
+      value: Tyre
+      objectReference: {fileID: 0}
     - target: {fileID: 3254734677939716440, guid: 5c2685a8d7e43fa4aa2c2c7c56d4f8b1,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -8730,7 +8778,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1725056776}
   - component: {fileID: 1725056775}
-  - component: {fileID: 1725056777}
   m_Layer: 0
   m_Name: QuestionManager
   m_TagString: Untagged
@@ -8751,7 +8798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - questionText: A vehicle is stopped on the curb of the road with its hazard lights
+  - eventName: Tyre
+    questionText: A vehicle is stopped on the curb of the road with its hazard lights
       on.
     redPillText: Do you maintain your speed and pass by closely?
     bluePillText: Do you alow down and move to the far lane to give the stopped vehicle
@@ -8773,21 +8821,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1725056777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725056774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe9be62c2c90d9488b06569c5342662, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questionText: {fileID: 1947198612}
-  redPillButton: {fileID: 1831210656}
-  bluePillButton: {fileID: 890821120}
 --- !u!1001 &1727129754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9378,8 +9411,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -446, y: -211}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -350, y: -165}
+  m_SizeDelta: {x: 510, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1831210656
 MonoBehaviour:
@@ -9424,7 +9457,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1831210657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 154570623}
+        m_TargetAssemblyTypeName: QuestionController, Assembly-CSharp
+        m_MethodName: OnRedPillSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1831210657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10094,8 +10139,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -229}
-  m_SizeDelta: {x: 1285.7, y: 399}
+  m_AnchoredPosition: {x: 0, y: -185.2}
+  m_SizeDelta: {x: 1238.39, y: 296}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947198612
 MonoBehaviour:
@@ -10152,7 +10197,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

@@ -26,6 +26,8 @@ public class QuestionController : MonoBehaviour
         CarController carController = FindObjectOfType<CarController>();
         carController.DecreaseAwareness(currentQuestion.redPillAwarenessEffect);
 
+        Debug.Log("red button pressed");
+
         // Deactivate the popup UI
         gameObject.SetActive(false);
         Time.timeScale = 1f;
@@ -36,6 +38,8 @@ public class QuestionController : MonoBehaviour
         // Update player's awareness level based on the selected pill option
         CarController carController = FindObjectOfType<CarController>();
         carController.IncreaseAwareness(currentQuestion.bluePillAwarenessEffect);
+
+        Debug.Log("blue button pressed");
 
         // Deactivate the popup UI
         gameObject.SetActive(false);
