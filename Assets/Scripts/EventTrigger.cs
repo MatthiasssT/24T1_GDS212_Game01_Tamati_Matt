@@ -6,6 +6,7 @@ public class EventTrigger : MonoBehaviour
 {
     public GameObject popupUI;
     public string eventName; // Event name to match with the question
+    [SerializeField] private BoxCollider boxCollider;
 
     private QuestionSystem questionSystem;
 
@@ -17,6 +18,8 @@ public class EventTrigger : MonoBehaviour
         {
             Debug.LogError("QuestionSystem object not found in the scene.");
         }
+
+        boxCollider.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,6 +49,9 @@ public class EventTrigger : MonoBehaviour
             {
                 Debug.LogWarning("No question found with the event name: " + eventName);
             }
+
+            StartCoroutine(RemoveTrigger());
+
         }
     }
 
@@ -60,5 +66,13 @@ public class EventTrigger : MonoBehaviour
             }
         }
         return null; // No question found with the specified event name
+    }
+
+    IEnumerator RemoveTrigger() 
+    { 
+    
+        yield return new WaitForSeconds(2f);
+        boxCollider.enabled = false;
+
     }
 }

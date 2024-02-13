@@ -24,7 +24,7 @@ public class QuestionController : MonoBehaviour
     {
         // Update player's awareness level based on the selected pill option
         CarController carController = FindObjectOfType<CarController>();
-        carController.DecreaseAwareness(currentQuestion.redPillAwarenessEffect);
+        carController.IncreaseAwareness(currentQuestion.redPillAwarenessEffect);
 
         Debug.Log("red button pressed");
 
@@ -37,7 +37,7 @@ public class QuestionController : MonoBehaviour
     {
         // Update player's awareness level based on the selected pill option
         CarController carController = FindObjectOfType<CarController>();
-        carController.IncreaseAwareness(currentQuestion.bluePillAwarenessEffect);
+        carController.DecreaseAwareness(currentQuestion.bluePillAwarenessEffect);
 
         Debug.Log("blue button pressed");
 
