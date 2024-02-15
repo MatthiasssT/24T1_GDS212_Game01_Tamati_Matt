@@ -45,6 +45,8 @@ public class CarController : MonoBehaviour
 
     public int awarenessLevel = 20; // Initial awareness level out of 100
 
+    public AwarenessText awarenessText; // Reference to the AwarenessText component
+
     private bool isIncreasingAwareness = false;
 
     private void FixedUpdate()
@@ -166,6 +168,13 @@ public class CarController : MonoBehaviour
         // Clamp the awareness level between 0 and 100
         awarenessLevel = Mathf.Clamp(awarenessLevel, 0, 100);
         Debug.Log("Awareness Level Decreased: " + awarenessLevel);
+
+        // Call the ChangeText method in AwarenessText script
+        if (awarenessText != null)
+        {
+            string changeText = "-" + Mathf.Abs(amount).ToString();
+            awarenessText.ChangeText(0.5f, Color.blue, changeText);
+        }
     }
 
     // Method to increase awareness level
@@ -175,6 +184,19 @@ public class CarController : MonoBehaviour
         // Clamp the awareness level between 0 and 100
         awarenessLevel = Mathf.Clamp(awarenessLevel, 0, 100);
         Debug.Log("Awareness Level Increased: " + awarenessLevel);
+
+        // Call the ChangeText method in AwarenessText script
+        if (awarenessText != null)
+        {
+            string changeText = "+" + Mathf.Abs(amount).ToString();
+            awarenessText.ChangeText(0.5f, Color.red, changeText);
+        }
+    }
+
+    // Method to get the awareness level
+    public int GetAwarenessLevel()
+    {
+        return awarenessLevel;
     }
 
     // Coroutine to increase awareness level gradually if speed is over 100 kph
@@ -189,6 +211,13 @@ public class CarController : MonoBehaviour
                 awarenessLevel += 1;
                 // Clamp the awareness level between 0 and 100
                 awarenessLevel = Mathf.Clamp(awarenessLevel, 0, 100);
+
+                // Call the ChangeText method in AwarenessText script
+                if (awarenessText != null)
+                {
+                    string changeText = "+" + Mathf.Abs(1).ToString();
+                    awarenessText.ChangeText(0.5f, Color.red, changeText);
+                }
             }
             // Wait for 2 seconds before checking again
             yield return new WaitForSeconds(2f);
